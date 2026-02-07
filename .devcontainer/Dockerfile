@@ -7,8 +7,10 @@
 FROM mcr.microsoft.com/devcontainers/python:1-3.12-bookworm
 
 # ---- Node.js 20 (Level 7: TypeScript + Copilot CLI install) ----
+# Remove stale Yarn repo (expired GPG key from base image breaks apt-get update)
 ARG NODE_MAJOR=20
-RUN curl -fsSL https://deb.nodesource.com/setup_${NODE_MAJOR}.x | bash - \
+RUN rm -f /etc/apt/sources.list.d/yarn.list \
+    && curl -fsSL https://deb.nodesource.com/setup_${NODE_MAJOR}.x | bash - \
     && apt-get install -y --no-install-recommends nodejs \
     && apt-get clean && rm -rf /var/lib/apt/lists/*
 
