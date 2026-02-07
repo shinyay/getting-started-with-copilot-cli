@@ -409,8 +409,20 @@ Copilot CLI automatically reads Markdown instruction files placed in your reposi
 | File / Path | Scope |
 |---|---|
 | `.github/copilot-instructions.md` | Repository-wide |
-| `.github/instructions/**/*.instructions.md` | Path-specific |
-| `AGENTS.md` | Agent-specific |
+| `.github/instructions/**/*.instructions.md` | Path-specific (glob-matched) |
+| `.github/AGENTS.md` | Coding Agent-specific |
+
+> 📋 **This repository uses all three layers** as a living example. See the
+> [agent configuration files](.github/) for real-world patterns:
+>
+> | File | What It Does |
+> |------|-------------|
+> | [`.github/copilot-instructions.md`](.github/copilot-instructions.md) | Repo context, 8-level structure, intentional bug catalog, content conventions |
+> | [`.github/AGENTS.md`](.github/AGENTS.md) | Coding Agent skills, commit format, PR standards, exercise authoring rules |
+> | [`.github/instructions/workshop-content.instructions.md`](.github/instructions/workshop-content.instructions.md) | Exercise format template, self-assessment rules (applies to `workshop/**/*.md`) |
+> | [`.github/instructions/sample-apps-python.instructions.md`](.github/instructions/sample-apps-python.instructions.md) | Python style, bug preservation rules (applies to L1–L6 `*.py`) |
+> | [`.github/instructions/sample-apps-typescript.instructions.md`](.github/instructions/sample-apps-typescript.instructions.md) | TypeScript/Express conventions (applies to L7 `*.ts`) |
+> | [`.github/instructions/github-config.instructions.md`](.github/instructions/github-config.instructions.md) | Workflow and issue template standards (applies to `.github/**/*.yml`) |
 
 #### Custom Agents
 
@@ -530,7 +542,7 @@ dotnet add package GitHub.Copilot.SDK
 
 1. **Plan first, then implement** — Use `/plan` to generate a plan before large changes. ([Docs][7])
 2. **Diff → Review → Test before commit** — Make `/diff` and `/review` a pre-commit ritual. ([Docs][7])
-3. **Use custom instructions sparingly** — Place design principles, naming conventions, test policies, and prohibitions in `.github/copilot-instructions.md`. ([Docs][2])
+3. **Use custom instructions strategically** — Place design principles, naming conventions, test policies, and prohibitions in `.github/copilot-instructions.md`. Use path-specific instructions (`.github/instructions/`) for language- or directory-scoped rules, and `AGENTS.md` for Coding Agent behavior. ([Docs][2])
 4. **Choose models by task weight** — Lightweight checks on non-premium models, heavy work on high-performance models.
 5. **Start read-only, then graduate to writes** — Build trust in the approval flow before allowing file modifications.
 6. **Use `/compact` proactively** — Don't wait for the 95% auto-compression; compress when switching tasks to keep context focused.
