@@ -16,8 +16,11 @@ concurrency:
 jobs:
   create-branch:
     runs-on: ubuntu-latest
-    # Skip the entire job early if the issue doesn't carry the expected label
-    if: contains(github.event.issue.labels.*.name, 'workshop-branch-request')
+    # Match by label OR title prefix — labels may not exist yet in new repos
+    if: >-
+      contains(github.event.issue.labels.*.name, 'workshop-branch-request') ||
+      contains(github.event.issue.labels.*.name, 'workshop') ||
+      startsWith(github.event.issue.title, '[workshop]')
 
     steps:
       - name: Create branch from Issue form
