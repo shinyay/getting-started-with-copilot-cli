@@ -197,14 +197,24 @@ This learning path is designed to take you from zero to productive with Copilot 
 
 **Goal:** Let Copilot execute commands (tests, builds, linters) and interpret results for you.
 
-| Step | What to Try | What You'll Learn |
-|------|------------|-------------------|
-| 5-1 | Ask: *"Run `bash hello.sh` and show me the output"* | Copilot executes commands with your approval ([Docs][2]) |
-| 5-2 | Ask: *"Run lint on this project and fix any issues"* | Copilot chains: run tool → read output → make fixes |
-| 5-3 | Ask: *"Run the tests and summarize failures"* | Copilot interprets test output and explains problems |
-| 5-4 | Approve a tool, then choose *"Auto-approve for this session"* | Session-scoped auto-approval saves repeated confirmations ([Docs][2]) |
+> 📂 Workshop: [`workshop/level-5/`](workshop/level-5/) — 12 exercises with a Math Utilities library (pytest, flake8, Makefile, 6 failing tests)
 
-**✅ Checkpoint:** You can let Copilot run commands, interpret results, and make targeted fixes — all with appropriate approval.
+| Exercise | What You'll Do | What You'll Learn |
+|----------|---------------|-------------------|
+| 5-1 | Discover available commands from Makefile/scripts | Discovery before execution — read configs first |
+| 5-2 | Run the full test suite through Copilot | `bash` tool approval and structured test output |
+| 5-3 | Deep-dive into test failure analysis | What/why/where/severity of each failure |
+| 5-4 | Fix bugs one at a time, re-running after each | The test → fix → re-run feedback loop |
+| 5-5 | Run the linter and categorize warnings | Static analysis output: unused imports, style, docs |
+| 5-6 | Fix lint violations without breaking tests | Lint → fix → re-lint → re-test cycle |
+| 5-7 | Run demo/benchmark scripts and discuss output | Script output as conversation context |
+| 5-8 | Inspect runtime environment through Copilot | Python version, packages, config diagnosis |
+| 5-9 | Chain multiple commands in sequence | Sequential, conditional, and fan-out patterns |
+| 5-10 | Handle command failures and error types | Distinguish test failure vs syntax error vs import error |
+| 5-11 | Test-Driven Development — tests first, then implement | TDD with Copilot: you define behavior, Copilot codes |
+| 5-12 | Let Copilot autonomously loop: test → fix → re-run | Agentic execution with human approval at every step |
+
+**✅ Checkpoint:** You can run commands through Copilot, interpret output, fix bugs in loops, and guide autonomous test-fix cycles.
 
 ---
 
