@@ -99,16 +99,22 @@ This learning path is designed to take you from zero to productive with Copilot 
 
 **Goal:** Get comfortable with the interactive UI and learn how Copilot reads your codebase. Nothing is modified at this level.
 
+> 📂 Full workshop: [`workshop/level-1/`](workshop/level-1/) — 10 hands-on exercises with a sample Python app.
+
 | Step | What to Try | What You'll Learn |
 |------|------------|-------------------|
-| 1-1 | Ask: *"What does this repository contain?"* | Copilot can read and summarize your project structure |
-| 1-2 | Ask: *"List all files in this project"* | Copilot uses tools (like `ls`, `find`) — observe the approval prompt |
-| 1-3 | Type `@ README.md` then ask: *"Summarize this file"* | `@` adds a specific file to the conversation context ([Docs][7]) |
-| 1-4 | Type `!git log --oneline -5` | `!` executes shell commands **without** calling the AI model ([Docs][2]) |
-| 1-5 | Type `/usage` | See your premium request and token consumption ([Docs][8]) |
-| 1-6 | Type `/model` | View available models and the current default ([Docs][3]) |
+| 1-1 | Launch `copilot` in `workshop/level-1/sample-app/` and trust the folder | The trust prompt is a security gate — Copilot won't touch files until you consent |
+| 1-2 | Type `/help` and read all sections | Discover all slash commands, shortcuts, and instruction file locations |
+| 1-3 | Type `!ls -la` then `!wc -l *.py` | `!` runs shell commands **instantly** with zero AI token cost ([Docs][2]) |
+| 1-4 | Ask: *"What is this project?"* | Copilot reads files to answer — observe tool approval prompts |
+| 1-5 | Type `@ config.py` then ask: *"What options are available?"* | `@` injects file contents directly into context ([Docs][7]) |
+| 1-6 | `@ task_manager.py` `@ models.py` then ask: *"Trace adding a new task"* | Deep multi-file exploration — data flow tracing |
+| 1-7 | Ask: *"Count lines of Python code"* and observe the approval prompt | Understand Allow / Deny / Allow-for-session tool approval ([Docs][2]) |
+| 1-8 | Type `/model`, `/usage`, then `/context` | Check your AI model, premium request stats, and token consumption ([Docs][3]) |
+| 1-9 | Ask 3 follow-up questions about the same file without re-referencing it | Multi-turn conversation — Copilot remembers context across turns |
+| 1-10 | Type `/compact` then `/context` to compare | Compress conversation history to free token space ([Docs][8]) |
 
-**✅ Checkpoint:** You can navigate the UI, add file context, run shell commands, and check usage stats.
+**✅ Checkpoint:** You can navigate the UI, add file context, run shell commands, read tool approvals, and manage the context window.
 
 ---
 
