@@ -170,18 +170,26 @@ This learning path is designed to take you from zero to productive with Copilot 
 
 ### Level 4: Create — Make Your First Changes
 
-**Goal:** Let Copilot make file changes while you learn the approval flow and review process.
+**Goal:** Let Copilot make file changes while you learn the approval flow, verification, and recovery.
 
-| Step | What to Try | What You'll Learn |
-|------|------------|-------------------|
-| 4-1 | Ask: *"Create a simple hello.sh script that prints Hello World"* | File creation — observe the **approval prompt** before the file is written |
-| 4-2 | After the file is created, type `/diff` | View exactly what changed in your working directory ([Docs][7]) |
-| 4-3 | Type `/review` | Copilot analyzes its own changes (pre-commit self-review) ([Docs][8]) |
-| 4-4 | Ask: *"Add a comment header to hello.sh with author and date"* | Incremental edits to an existing file |
-| 4-5 | Type `/diff` again | See the cumulative diff grow |
-| 4-6 | Use `!git diff` to verify outside Copilot | Cross-check: the `!` shortcut runs git directly |
+> 📂 Workshop: [`workshop/level-4/`](workshop/level-4/) — 12 exercises with the Quick Notes sample app (copy of Level 3, now you modify it)
 
-**✅ Checkpoint:** You can create files, review diffs, and verify changes before committing. You understand the approval flow.
+| Exercise | What You'll Do | What You'll Learn |
+|----------|---------------|-------------------|
+| 4-1 | Create a `CHANGELOG.md` file from scratch | File creation — the safest first write operation |
+| 4-2 | Try Allow, Deny, and Allow-for-session | The 3 approval choices and when to use each |
+| 4-3 | Use `/diff` after changes | Inspect exactly what changed before committing |
+| 4-4 | Use `/review` after changes | AI-powered quality assessment of your edits |
+| 4-5 | Fix case-sensitive search bug | Plan → implement → diff → review → test workflow |
+| 4-6 | Fix tag normalization bug | Bugs with data implications (existing vs new data) |
+| 4-7 | Fix XSS vulnerability in HTML export | Security fixes with targeted verification |
+| 4-8 | Fix pinned notes sorting | UX bugs verified through CLI output |
+| 4-9 | Make multiple incremental edits to one file | Small changes with `/diff` checkpoints between each |
+| 4-10 | Revert changes at various granularities | `git checkout -- file`, `git checkout -- .`, `git clean -fd` |
+| 4-11 | Execute the full plan → implement → diff → review cycle | The 7-step workflow for non-trivial changes |
+| 4-12 | Coordinate changes across multiple files | Cross-file consistency verification |
+
+**✅ Checkpoint:** You can create files, fix bugs, review diffs, revert mistakes, and execute the complete 7-step change cycle.
 
 ---
 
