@@ -245,18 +245,26 @@ This learning path is designed to take you from zero to productive with Copilot 
 
 ### Level 7: Customize — Make Copilot Work Your Way
 
-**Goal:** Configure Copilot's behavior to match your project's conventions and your personal workflow.
+**Goal:** Configure Copilot's behavior to match your project's conventions and optimize context management.
 
-| Step | What to Try | What You'll Learn |
-|------|------------|-------------------|
-| 7-1 | Create `.github/copilot-instructions.md` with: *"Always use TypeScript. Prefer functional style."* | Repository-wide custom instructions ([Docs][2]) |
-| 7-2 | Ask Copilot to write some code and observe it following your instructions | Instructions are automatically loaded |
-| 7-3 | Type `/init` | Scaffold agent configuration files for your repo ([Docs][7]) |
-| 7-4 | Try switching models: `/model` → select a different model | Different models for different tasks ([Docs][3]) |
-| 7-5 | Try programmatic mode from outside: `copilot -p "Summarize this repo"` | One-shot, non-interactive execution ([Docs][7]) |
-| 7-6 | Try silent mode: `copilot -p "List all TODOs" -s` | Script-friendly output — only the response ([Docs][7]) |
+> 📂 Workshop: [`workshop/level-7/`](workshop/level-7/) — 12 exercises with a TypeScript Event API (conventions, MCP, context optimization)
 
-**✅ Checkpoint:** You can customize Copilot's behavior per-repo, switch models, and use programmatic mode for automation.
+| Exercise | What You'll Do | What You'll Learn |
+|----------|---------------|-------------------|
+| 7-1 | Write `.github/copilot-instructions.md` from codebase analysis | Custom instructions: specific, actionable, with examples |
+| 7-2 | Generate code and verify it follows instructions | Testing instructions iteratively — refine when Copilot deviates |
+| 7-3 | Practice targeted `@` references for different tasks | Context optimization: right files for right tasks |
+| 7-4 | Create `.copilotignore` to exclude generated/vendor files | Keep context clean — exclude noise automatically |
+| 7-5 | Build reusable prompt templates for your team | Standardized quality: service, endpoint, bug fix, review templates |
+| 7-6 | Learn MCP server architecture and use cases | Model Context Protocol: what it is, how it extends Copilot |
+| 7-7 | Configure MCP servers for the project | MCP config: project-level vs user-level, security best practices |
+| 7-8 | Master session lifecycle: continue, resume, clear | Session management for multi-task workflows |
+| 7-9 | Set up terminal integration with `/terminal-setup` | Multiline input, shell integration, keyboard shortcuts |
+| 7-10 | Work across multiple projects with context boundaries | Monorepo patterns, cross-directory references |
+| 7-11 | Layer instructions at org, repo, personal, and session levels | Instruction priority: session > personal > repo > org |
+| 7-12 | Audit configuration effectiveness and create setup checklist | Measure ROI: custom instructions = highest impact |
+
+**✅ Checkpoint:** You can customize Copilot per-project, optimize context, configure MCP servers, and manage sessions for maximum productivity.
 
 ---
 

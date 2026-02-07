@@ -1,0 +1,29 @@
+{
+  "openapi": "3.0.3",
+  "info": { "title": "Event API", "version": "1.0.0" },
+  "paths": {
+    "/api/events": {
+      "get": { "summary": "List events", "parameters": [
+        { "name": "page", "in": "query", "schema": { "type": "integer" } },
+        { "name": "pageSize", "in": "query", "schema": { "type": "integer" } },
+        { "name": "status", "in": "query", "schema": { "type": "string", "enum": ["draft", "published", "cancelled", "completed"] } },
+        { "name": "tag", "in": "query", "schema": { "type": "string" } }
+      ]},
+      "post": { "summary": "Create event", "requestBody": { "content": { "application/json": { "schema": { "$ref": "#/components/schemas/CreateEventInput" } } } } }
+    },
+    "/api/events/{id}": {
+      "get": { "summary": "Get event by ID" },
+      "put": { "summary": "Update event" },
+      "delete": { "summary": "Delete event" }
+    },
+    "/api/events/{id}/register": {
+      "post": { "summary": "Register attendee" }
+    }
+  },
+  "components": {
+    "schemas": {
+      "Event": { "type": "object", "properties": { "id": { "type": "string", "format": "uuid" }, "title": { "type": "string" }, "description": { "type": "string" }, "date": { "type": "string", "format": "date-time" }, "location": { "type": "string" }, "capacity": { "type": "integer" }, "attendees": { "type": "array", "items": { "type": "string" } }, "organizerId": { "type": "string" }, "tags": { "type": "array", "items": { "type": "string" } }, "status": { "type": "string", "enum": ["draft", "published", "cancelled", "completed"] } } },
+      "CreateEventInput": { "type": "object", "required": ["title", "description", "date", "location", "capacity"], "properties": { "title": { "type": "string", "maxLength": 200 }, "description": { "type": "string", "maxLength": 5000 }, "date": { "type": "string", "format": "date-time" }, "location": { "type": "string" }, "capacity": { "type": "integer", "minimum": 1 }, "tags": { "type": "array", "items": { "type": "string" }, "maxItems": 10 } } }
+    }
+  }
+}
