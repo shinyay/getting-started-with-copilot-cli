@@ -147,14 +147,24 @@ This learning path is designed to take you from zero to productive with Copilot 
 
 **Goal:** Learn to use Plan mode to create implementation plans **before** any code is written. This is the key habit that prevents runaway changes.
 
+> 📂 Full workshop: [`workshop/level-3/`](workshop/level-3/) — 12 exercises with a note-taking app containing intentional bugs and TODOs.
+
 | Step | What to Try | What You'll Learn |
 |------|------------|-------------------|
-| 3-1 | Type `/plan Add a CONTRIBUTING.md to this repo` | Copilot generates a step-by-step plan for review ([Docs][7]) |
-| 3-2 | Read the plan and ask: *"Can you add a section about code style?"* | Plans are editable through conversation |
-| 3-3 | Type `/plan Refactor the README into smaller sections` | Practice planning on an existing file |
-| 3-4 | Reject the plan (type *"Actually, let's not do this"*) | Learn that plans don't commit you to anything |
+| 3-1 | `/plan Fix the case-sensitive search bug in search.py` | Create your first plan and observe its structure ([Docs][7]) |
+| 3-2 | Evaluate the plan: scope, completeness, safety, testing? | Read plans critically using a 6-point checklist |
+| 3-3 | *"Too broad — focus only on X and Y"* then add constraints | Refine plans through iterative conversation |
+| 3-4 | *"No — that's too big a change. Just add error handling"* | Reject plans with clear reasons and redirect |
+| 3-5 | `/plan Fix the tag normalization bug` — consider data migration | Plan a bug fix (minimal change, backward-compatible) |
+| 3-6 | `/plan Add search operators (tag:python, title:meeting)` | Plan a new feature (scope, interface, steps, testing) |
+| 3-7 | `/plan Refactor the if/elif chain in notes.py` | Plan a refactoring (test-first, behavior-preserving) |
+| 3-8 | Add constraints: *"Only modify export.py, max 30 lines, stdlib only"* | Plan with constraints that bound scope |
+| 3-9 | `/plan Add a "last modified" sort` — trace through 3 files | Plan multi-file changes with safe implementation order |
+| 3-10 | *"Give me 3 approaches — minimal, moderate, and robust"* | Compare alternative plans using a decision matrix |
+| 3-11 | Plan from a user story with acceptance criteria | Translate requirements into concrete implementation plans |
+| 3-12 | Review a complex plan against the 8-point checklist | Plan review as a repeatable skill (scope, risk, testing, migration, edge cases) |
 
-**✅ Checkpoint:** You can create, review, refine, and reject implementation plans before any files are touched.
+**✅ Checkpoint:** You can create, evaluate, refine, reject, and compare plans — the foundation for every change you'll make in Levels 4–8.
 
 ---
 
