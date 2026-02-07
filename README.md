@@ -445,6 +445,23 @@ common workflows. Unlike instructions (passive context), skills are actively tri
 > | [`workshop-setup`](.github/prompts/workshop-setup.prompt.md) | agent | Verify learner environment and recommend starting level |
 > | [`sync-readme`](.github/prompts/sync-readme.prompt.md) | agent | Synchronize main README tables with actual level content |
 
+#### Agent Skills (Auto-Loaded by Copilot)
+
+Agent Skills (`.github/skills/*/SKILL.md`) are an [open standard](https://github.com/agentskills/agentskills) —
+folders of instructions, scripts, and resources that Copilot **automatically loads when relevant** based on the
+skill's description. Unlike prompt files (explicitly invoked), skills are injected into context when Copilot
+determines they match the current task.
+
+> 📋 **This repository includes 5 agent skills:**
+>
+> | Skill | Auto-Triggers When… | Includes |
+> |-------|---------------------|----------|
+> | [`workshop-exercise-authoring`](.github/skills/workshop-exercise-authoring/) | Creating or editing exercises | Exercise format template, numbering rules |
+> | [`workshop-level-scaffolding`](.github/skills/workshop-level-scaffolding/) | Creating a new workshop level | Full checklist + `scaffold.sh` script |
+> | [`sample-app-development`](.github/skills/sample-app-development/) | Editing sample-app code | Complete bug catalog, language standards |
+> | [`workshop-content-review`](.github/skills/workshop-content-review/) | Reviewing or auditing content | 20-point checklist + `validate.sh` script |
+> | [`workshop-learner-onboarding`](.github/skills/workshop-learner-onboarding/) | Asking about setup or getting started | Environment checks, starting level guide |
+
 #### MCP (Model Context Protocol) Integration
 
 Copilot CLI supports MCP server integration for extending tools and context. ([Features][6])
