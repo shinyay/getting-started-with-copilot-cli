@@ -429,6 +429,22 @@ Copilot CLI automatically reads Markdown instruction files placed in your reposi
 Define agent profiles (Markdown) specifying **prompts, tools, and MCP servers** to create specialized agents. ([Docs][2])
 Built-in agents (Explore, Task, Plan, etc.) are also bundled. ([Docs][2])
 
+#### Agent Skills (Reusable Prompts)
+
+Prompt files (`.github/prompts/*.prompt.md`) define **reusable, invocable skills** that standardize
+common workflows. Unlike instructions (passive context), skills are actively triggered by name.
+
+> 📋 **This repository includes 6 agent skills** for workshop maintenance and learner onboarding:
+>
+> | Skill | Mode | Purpose |
+> |-------|------|---------|
+> | [`create-level`](.github/prompts/create-level.prompt.md) | agent | Scaffold a complete new workshop level (README + cheat sheet + sample app) |
+> | [`create-exercise`](.github/prompts/create-exercise.prompt.md) | agent | Generate a single exercise in the standard format |
+> | [`review-level`](.github/prompts/review-level.prompt.md) | agent | Audit a level for format consistency (20-point checklist) |
+> | [`verify-bugs`](.github/prompts/verify-bugs.prompt.md) | agent | Confirm intentional sample app bugs are preserved |
+> | [`workshop-setup`](.github/prompts/workshop-setup.prompt.md) | agent | Verify learner environment and recommend starting level |
+> | [`sync-readme`](.github/prompts/sync-readme.prompt.md) | agent | Synchronize main README tables with actual level content |
+
 #### MCP (Model Context Protocol) Integration
 
 Copilot CLI supports MCP server integration for extending tools and context. ([Features][6])
