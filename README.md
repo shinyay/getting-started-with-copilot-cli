@@ -270,18 +270,26 @@ This learning path is designed to take you from zero to productive with Copilot 
 
 ### Level 8: Advanced — Permissions, Sessions & Delegation
 
-**Goal:** Master fine-grained control, session management, and advanced features.
+**Goal:** Master fine-grained permissions, programmatic automation, session management, and autonomous agent delegation.
 
-| Step | What to Try | What You'll Learn |
-|------|------------|-------------------|
-| 8-1 | Launch with `copilot --allow-tool bash` | Pre-approve specific tools at startup ([Docs][7]) |
-| 8-2 | Launch with `copilot --deny-url "*"` | Block all web access for a locked-down session ([Docs][7]) |
-| 8-3 | After some work, exit and use `copilot --resume` | Browse and restore past sessions ([Docs][2]) |
-| 8-4 | Type `/delegate` | Delegate work to a remote AI-generated PR ([Docs][7]) |
-| 8-5 | Explore `--available-tools` and `--excluded-tools` | Control exactly which tools the model can see ([Docs][7]) |
-| 8-6 | Try `copilot --yolo` in a **safe sandbox only** | Understand `--allow-all` and why it's risky ([Docs][8]) |
+> 📂 Workshop: [`workshop/level-8/`](workshop/level-8/) — 12 exercises with a DevOps Toolkit (multi-service, automation scripts, CI, security configs)
 
-**✅ Checkpoint:** You can lock down or open up permissions, manage multiple sessions, and delegate work remotely.
+| Exercise | What You'll Do | What You'll Learn |
+|----------|---------------|-------------------|
+| 8-1 | Configure `--allow-tool` and `--deny-tool` flags | Fine-grained tool permissions: pre-approve, block, default |
+| 8-2 | Control network access with `--allow-url` / `--deny-url` | URL permission patterns for security and compliance |
+| 8-3 | Use `copilot -p "prompt" -s` for scripted automation | Programmatic mode: non-interactive, silent, pipeable |
+| 8-4 | Build and enhance automation shell scripts | Wrap Copilot CLI for review, changelog, triage automation |
+| 8-5 | Configure multi-layered security boundaries | Defense in depth: `.copilotignore` + deny-tool + deny-url + instructions |
+| 8-6 | Master session lifecycle: continue, resume, clear | Session strategies for different workflow patterns |
+| 8-7 | Work across multiple services with parallel sessions | Multi-session workflows: one session per task/service |
+| 8-8 | Understand the Copilot Coding Agent workflow | Issue → assign → PR → review → iterate → merge |
+| 8-9 | Design CI/CD integrations with Copilot CLI | Pipeline patterns: PR review, test analysis, security scan |
+| 8-10 | Explore ACP and SDK ecosystem concepts | Copilot ecosystem: CLI, Agent, IDE, MCP, SDK, ACP |
+| 8-11 | Build a delegation decision framework | Decision tree: manual → CLI → agent → pipeline |
+| 8-12 | Capstone: create your personal mastery framework | Synthesize all 8 levels into daily workflow + cheat sheet |
+
+**✅ Checkpoint:** You can configure permissions, automate with programmatic mode, delegate to the Coding Agent, and synthesize all skills into a personal mastery framework.
 
 ---
 

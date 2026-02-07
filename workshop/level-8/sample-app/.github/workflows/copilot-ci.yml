@@ -1,0 +1,90 @@
+# Copilot-Assisted CI Pipeline — demonstration workflow
+#
+# This workflow shows how Copilot CLI can be integrated into CI/CD:
+# - Automated code review on PRs
+# - Changelog generation on release
+# - Issue triage on new issues
+#
+# NOTE: This is a REFERENCE workflow for Level 8 exercises.
+# It requires COPILOT_TOKEN to be set as a repository secret.
+
+name: "Copilot CI Assistant"
+
+on:
+  pull_request:
+    types: [opened, synchronize]
+  issues:
+    types: [opened]
+  release:
+    types: [created]
+
+permissions:
+  contents: read
+  issues: write
+  pull-requests: write
+
+jobs:
+  # --- PR Review ---
+  review-pr:
+    if: github.event_name == 'pull_request'
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+        with:
+          fetch-depth: 0
+
+      - name: Get PR diff
+        id: diff
+        run: |
+          git diff origin/${{ github.base_ref }}...HEAD > /tmp/pr-diff.txt
+          echo "lines=$(wc -l < /tmp/pr-diff.txt)" >> "$GITHUB_OUTPUT"
+
+      - name: AI Review (placeholder)
+        if: steps.diff.outputs.lines > 0
+        run: |
+          echo "=== PR Review ==="
+          echo "Diff: $(wc -l < /tmp/pr-diff.txt) lines"
+          echo ""
+          echo "In production, this step would run:"
+          echo '  copilot -p "Review this diff: $(cat /tmp/pr-diff.txt)" -s'
+          echo ""
+          echo "Requires: COPILOT_TOKEN secret and copilot CLI installed"
+
+  # --- Issue Triage ---
+  triage-issue:
+    if: github.event_name == 'issues'
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+
+      - name: AI Triage (placeholder)
+        env:
+          ISSUE_TITLE: ${{ github.event.issue.title }}
+          ISSUE_BODY: ${{ github.event.issue.body }}
+        run: |
+          echo "=== Issue Triage ==="
+          echo "Title: $ISSUE_TITLE"
+          echo ""
+          echo "In production, this step would run:"
+          echo '  copilot -p "Triage: $ISSUE_TITLE\n$ISSUE_BODY" -s'
+          echo ""
+          echo "Requires: COPILOT_TOKEN secret and copilot CLI installed"
+
+  # --- Changelog ---
+  generate-changelog:
+    if: github.event_name == 'release'
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+        with:
+          fetch-depth: 0
+
+      - name: AI Changelog (placeholder)
+        run: |
+          echo "=== Changelog Generator ==="
+          echo "Release: ${{ github.event.release.tag_name }}"
+          echo ""
+          echo "In production, this step would run:"
+          echo '  copilot -p "Generate changelog from: $(git log --oneline)" -s'
+          echo ""
+          echo "Requires: COPILOT_TOKEN secret and copilot CLI installed"
