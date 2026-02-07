@@ -220,18 +220,26 @@ This learning path is designed to take you from zero to productive with Copilot 
 
 ### Level 6: Workflow — The Full Plan → Execute → Review Cycle
 
-**Goal:** Combine everything into the complete Copilot CLI workflow for a real task.
+**Goal:** Combine all skills into complete development workflows for realistic tasks.
 
-| Step | What to Try | What You'll Learn |
-|------|------------|-------------------|
-| 6-1 | `/plan Add a .gitignore file appropriate for this project` | Start with a plan |
-| 6-2 | Approve the plan and let Copilot execute | Plan → implementation |
-| 6-3 | `/diff` then `/review` | Review the changes |
-| 6-4 | Ask: *"Commit these changes with an appropriate message"* | Copilot can stage and commit (with approval) |
-| 6-5 | Exit Copilot (`Ctrl+C` or `/exit`) | Clean session exit |
-| 6-6 | Restart with `copilot --continue` | Resume the most recent session ([Docs][2]) |
+> 📂 Workshop: [`workshop/level-6/`](workshop/level-6/) — 12 exercises with a URL Shortener CLI (multi-file bug, test gaps, feature gap, duplicated logic)
 
-**✅ Checkpoint:** You can execute the full workflow: plan → implement → diff → review → commit → resume.
+| Exercise | What You'll Do | What You'll Learn |
+|----------|---------------|-------------------|
+| 6-1 | Build URL expiration from scratch | Full plan → implement → test → diff → review cycle |
+| 6-2 | Debug stats-wrong-after-delete bug | Multi-file investigation: reproduce → trace → root-cause → fix |
+| 6-3 | Write tests for untested validator.py | Discover test gaps and fill them systematically |
+| 6-4 | Extract duplicated validation logic | Safe refactoring: baseline tests → refactor → verify same green |
+| 6-5 | Update README from actual code state | Documentation audit → update → verify examples |
+| 6-6 | Simulate a pull request code review | Multi-angle review: correctness, security, testing, maintainability |
+| 6-7 | Execute a minimal-change hotfix | Hotfix discipline: ≤5 lines, one concern, tiny `/diff` |
+| 6-8 | Build feature + tests interleaved | Implement step → test step → implement step → test step |
+| 6-9 | Translate vague requirements into code | Requirements refinement: clarify → decide → plan → implement |
+| 6-10 | End-to-end: Issue → Plan → Code → Test → Review | The complete software development lifecycle in one exercise |
+| 6-11 | Recover from a broken workflow | Fix forward vs revert — when each strategy is correct |
+| 6-12 | Retrospective: analyze your own workflow | Identify patterns, inefficiencies, and improvement areas |
+
+**✅ Checkpoint:** You can execute complete development workflows — features, bugs, refactors, hotfixes, and code reviews — using all Copilot CLI skills.
 
 ---
 
