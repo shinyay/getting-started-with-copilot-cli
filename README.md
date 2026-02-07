@@ -122,16 +122,24 @@ This learning path is designed to take you from zero to productive with Copilot 
 
 **Goal:** Use Copilot as a code understanding assistant. Still read-only — you're asking questions, not making changes.
 
+> 📂 Full workshop: [`workshop/level-2/`](workshop/level-2/) — 12 hands-on exercises with a layered bookmark API app.
+
 | Step | What to Try | What You'll Learn |
 |------|------------|-------------------|
-| 2-1 | Ask: *"Explain the structure of this project"* | Copilot synthesizes information across multiple files |
-| 2-2 | `@ <any-source-file>` then ask: *"What does this file do?"* | Deep file-level explanation with context |
-| 2-3 | Ask: *"What dependencies does this project use?"* | Copilot reads config files (package.json, requirements.txt, etc.) |
-| 2-4 | Ask: *"Are there any potential issues or bugs in this codebase?"* | Copilot performs lightweight code analysis |
-| 2-5 | Type `/context` | Visualize how much of the token window you've used ([Docs][8]) |
-| 2-6 | Type `/compact` | Compress conversation history to free up token space ([Docs][8]) |
+| 2-1 | Ask: *"Show the import dependency graph for all Python files"* | Map which file imports which — the foundation of any codebase |
+| 2-2 | `@ app.py` `@ routes.py` `@ service.py` `@ repository.py` — ask about layers | Identify architectural layers and their responsibilities |
+| 2-3 | *"Trace GET /bookmarks?tag=python from request to response"* | Top-down execution tracing through all layers |
+| 2-4 | *"Where is DuplicateError raised? Trace up to the HTTP response"* | Bottom-up tracing — from component to all callers |
+| 2-5 | `@ config.py` — ask: *"List all env vars with defaults and risks"* | Configuration audit and environment analysis |
+| 2-6 | *"What design patterns are used? Which files implement them?"* | Pattern recognition (Repository, Factory, Exception hierarchy) |
+| 2-7 | *"Find thread safety, validation, and error handling issues"* | Bug and code smell discovery without modifying code |
+| 2-8 | *"What if the JSON file is deleted while the server runs?"* | Hypothetical reasoning — predict impact without changes |
+| 2-9 | *"Compare InMemoryRepository vs FileRepository — which is better?"* | Compare implementations and articulate tradeoffs |
+| 2-10 | *"Generate a complete API reference from routes.py"* | Documentation generation from code |
+| 2-11 | *"Summarize this entire application in one paragraph"* | Knowledge synthesis — prove you understand the codebase |
+| 2-12 | Try weak vs strong prompts on the same question — compare results | Advanced prompt crafting (structured, scoped, multi-step) |
 
-**✅ Checkpoint:** You can use Copilot to understand unfamiliar code and manage your conversation context efficiently.
+**✅ Checkpoint:** You can map dependencies, trace execution paths, discover bugs, reason hypothetically, and craft deep prompts.
 
 ---
 
