@@ -99,7 +99,7 @@ This learning path is designed to take you from zero to productive with Copilot 
 
 **Goal:** Get comfortable with the interactive UI and learn how Copilot reads your codebase. Nothing is modified at this level.
 
-> 📂 Full workshop: [`workshop/level-1/`](workshop/level-1/) — 10 hands-on exercises with a sample Python app.
+> 📂 Full workshop: [`workshop/level-1/`](workshop/level-1/) — 12 hands-on exercises with a sample Python app.
 
 | Step | What to Try | What You'll Learn |
 |------|------------|-------------------|
@@ -113,8 +113,10 @@ This learning path is designed to take you from zero to productive with Copilot 
 | 1-8 | Type `/model`, `/usage`, then `/context` | Check your AI model, premium request stats, and token consumption ([Docs][3]) |
 | 1-9 | Ask 3 follow-up questions about the same file without re-referencing it | Multi-turn conversation — Copilot remembers context across turns |
 | 1-10 | Type `/compact` then `/context` to compare | Compress conversation history to free token space ([Docs][8]) |
+| 1-11 | Exit (`Ctrl+C`), then `copilot --continue` | Session basics: exit, continue, and resume ([Docs][2]) |
+| 1-12 | Ask *"How would I add X?"* vs *"Add X"* — and Deny the write | Distinguish questions (safe) from tasks (writes) — the Level 1 boundary |
 
-**✅ Checkpoint:** You can navigate the UI, add file context, run shell commands, read tool approvals, and manage the context window.
+**✅ Checkpoint:** You can navigate the UI, add file context, run shell commands, read tool approvals, manage context, and stay in read-only mode.
 
 ---
 
@@ -295,6 +297,8 @@ This learning path is designed to take you from zero to productive with Copilot 
 
 ### 🏆 Summary: Key Commands Cheat Sheet
 
+> 📋 **Per-level cheat sheets** are available in each workshop directory (e.g., [`workshop/level-1/CHEATSHEET.md`](workshop/level-1/CHEATSHEET.md)).
+
 | Category | Command / Syntax | Purpose |
 |----------|-----------------|---------|
 | **Context** | `@ filename` | Add file to conversation context |
@@ -305,9 +309,11 @@ This learning path is designed to take you from zero to productive with Copilot 
 | **Session** | `/compact` | Compress conversation history |
 | **Session** | `/context` | Visualize token usage |
 | **Session** | `/usage` | View premium request stats |
+| **Session** | `/clear` | Reset context within session |
 | **Session** | `/login` | Authenticate with GitHub |
 | **Model** | `/model` | View/switch AI models |
 | **Setup** | `/init` | Scaffold repo configuration |
+| **Setup** | `/terminal-setup` | Configure shell for multiline input |
 | **Delegate** | `/delegate` | Create AI-generated PR remotely |
 | **Launch** | `copilot --continue` | Resume last session |
 | **Launch** | `copilot --resume` | Browse and restore sessions |

@@ -47,6 +47,8 @@ python -m flake8 --version
 
 Level 5 uses a **Math Utilities Library** — a proper Python package with tests, linting, scripts, and a Makefile.
 
+> Unlike Levels 3–4's note-taking CLI (focused on writing and planning), this app is designed for **command execution**: it has a `pytest` test suite with 6 intentional failures, `flake8` lint warnings, a `Makefile` with 10 targets, and benchmark scripts — everything you need to practice running commands through Copilot.
+
 ```
 sample-app/
 ├── mathlib/

@@ -33,6 +33,8 @@ By the end of this level, you will be able to:
 
 Level 7 uses an **Event API** — a TypeScript Express application with specific conventions that benefit from custom Copilot instructions.
 
+> Unlike Levels 1–6 which all used Python, this level switches to **TypeScript** to demonstrate that Copilot CLI customization (instructions, context, MCP) works across any language. The app has strong conventions (AppError, ApiResponse, logger) that Copilot should learn to follow through your custom instructions.
+
 ```
 sample-app/
 ├── src/

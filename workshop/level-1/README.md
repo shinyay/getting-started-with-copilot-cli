@@ -16,6 +16,8 @@ By the end of this level, you will be able to:
 8. Ask effective read-only questions across multiple files
 9. Understand token consumption and context window management
 10. Recognize the difference between "questions" and "tasks" in prompts
+11. Manage sessions: exit, continue, and resume
+12. Stay in read-only mode by phrasing prompts as questions
 
 ---
 
@@ -30,7 +32,7 @@ By the end of this level, you will be able to:
 
 ## Workshop Structure
 
-This level contains **10 exercises**, each building on the previous one. Estimated time: **45–60 minutes**.
+This level contains **12 exercises**, each building on the previous one. Estimated time: **45–60 minutes**.
 
 | Exercise | Topic | Time |
 |----------|-------|------|
@@ -44,6 +46,8 @@ This level contains **10 exercises**, each building on the previous one. Estimat
 | 8 | Model & Usage Awareness | 5 min |
 | 9 | Multi-Turn Conversations | 5 min |
 | 10 | Context Window Management | 5 min |
+| 11 | Session Basics | 5 min |
+| 12 | Questions vs Tasks — Know the Boundary | 5 min |
 
 ---
 
@@ -640,6 +644,152 @@ You can monitor, compress, and manage the context window proactively.
 
 ---
 
+## Exercise 11: Session Basics
+
+### Goal
+Understand how sessions work — exiting, continuing, and starting fresh.
+
+### Steps
+
+**11.1** Check your current session info:
+
+```
+/context
+```
+
+> Observe: this shows your loaded files, token usage, and session details.
+
+**11.2** Exit Copilot cleanly:
+
+Press `Ctrl+C` or type:
+
+```
+/exit
+```
+
+**11.3** Resume where you left off:
+
+```bash
+copilot --continue
+```
+
+**11.4** Verify the session restored:
+
+```
+What files were we looking at? Do you remember our previous conversation?
+```
+
+> Copilot should recall your previous context.
+
+**11.5** Exit again and start fresh:
+
+```bash
+copilot
+```
+
+```
+Do you know what we were discussing before?
+```
+
+> A new session has no memory of previous sessions.
+
+**11.6** Try resuming from a list:
+
+```bash
+copilot --resume
+```
+
+> This shows recent sessions — you can pick which one to return to.
+
+### Key Concept: Session Lifecycle
+
+| Command | Result |
+|---------|--------|
+| `copilot` | New session (blank slate) |
+| `copilot --continue` | Resume the last session |
+| `copilot --resume` | Choose from recent sessions |
+| `/exit` or `Ctrl+C` | Save and exit |
+
+### ✅ Checkpoint
+You understand session basics: starting fresh, continuing, and resuming.
+
+---
+
+## Exercise 12: Questions vs Tasks — Know the Boundary
+
+### Goal
+Learn to distinguish between **questions** (safe, read-only) and **tasks** (modify files) — the essential skill that prepares you for Level 2 and beyond.
+
+### Steps
+
+**12.1** Ask a pure question (safe — Level 1 skill):
+
+```
+What does the add_task function in task_manager.py do?
+```
+
+> This only reads code and explains. No tools are invoked beyond `view`.
+
+**12.2** Ask a question that sounds like a task:
+
+```
+How would I add a "priority" field to the Task class?
+```
+
+> Copilot should **explain** how — it doesn't actually modify files. This is still a question.
+
+**12.3** Now ask an actual task (observe, don't approve):
+
+```
+Add a "priority" field to the Task class in models.py
+```
+
+> ⚠️ This will trigger a **write tool approval** (`edit`). Choose **Deny**.
+
+**12.4** Notice the difference:
+
+| Prompt | Type | Tool Used |
+|--------|------|-----------|
+| "What does X do?" | Question | `view` (read-only) |
+| "How would I add X?" | Question | None or `view` |
+| "Add X to file Y" | Task | `edit` (write!) |
+| "Explain the bug in X" | Question | `view` |
+| "Fix the bug in X" | Task | `edit` (write!) |
+
+**12.5** Practice rewriting tasks as questions:
+
+| Task (Level 4+) | Question (Level 1) |
+|------------------|-------------------|
+| "Fix the validation bug" | "What's wrong with the validation logic?" |
+| "Add error handling" | "Where is error handling missing?" |
+| "Refactor this function" | "How would you suggest refactoring this?" |
+
+**12.6** Internalize the rule:
+
+```
+In Levels 1–3, always phrase prompts as QUESTIONS.
+If Copilot shows a write tool approval, choose Deny.
+You'll learn to approve writes starting in Level 4.
+```
+
+### Key Concept: The Question/Task Spectrum
+
+```
+Questions (Level 1)              Tasks (Level 4+)
+  │                                │
+  "What does..."                   "Create..."
+  "How does..."                    "Fix..."
+  "Explain..."                     "Add..."
+  "Where is..."                    "Refactor..."
+  "Why does..."                    "Delete..."
+  "Show me..."                     "Update..."
+```
+
+### ✅ Checkpoint
+You can reliably distinguish questions from tasks and stay in read-only mode.
+
+---
+
 ## 🏆 Level 1 Self-Assessment
 
 Rate yourself on each skill (1 = shaky, 3 = confident):
@@ -656,11 +806,13 @@ Rate yourself on each skill (1 = shaky, 3 = confident):
 | 8 | Check model, usage, and context (`/model`, `/usage`, `/context`) | ☐ | ☐ | ☐ |
 | 9 | Hold multi-turn conversations with follow-ups | ☐ | ☐ | ☐ |
 | 10 | Manage the context window with `/compact` | ☐ | ☐ | ☐ |
+| 11 | Manage sessions: exit, continue, and resume | ☐ | ☐ | ☐ |
+| 12 | Distinguish questions from tasks and stay read-only | ☐ | ☐ | ☐ |
 
 **Scoring:**
-- **25–30:** Ready for Level 2
-- **18–24:** Review exercises 5–10 once more
-- **Below 18:** Repeat the level — practice builds fluency
+- **30–36:** Ready for Level 2
+- **22–29:** Review exercises 5–12 once more
+- **Below 22:** Repeat the level — practice builds fluency
 
 ---
 
@@ -673,6 +825,7 @@ Rate yourself on each skill (1 = shaky, 3 = confident):
 5. **Monitor context** — `/usage` and `/context` keep you aware of consumption
 6. **`/compact` proactively** — don't wait for auto-compression at 95%
 7. **Deep questions get deep answers** — "trace the execution path" beats "explain this file"
+8. **Sessions persist** — `--continue` resumes, `--resume` lets you pick, bare `copilot` starts fresh
 
 ---
 

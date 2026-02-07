@@ -31,7 +31,9 @@ By the end of this level, you will be able to:
 
 ## About the Sample App
 
-Level 3 uses a **Quick Notes CLI** — a note-taking app with **intentional issues**:
+Level 3 uses a **Quick Notes CLI** — a note-taking app with **intentional issues**.
+
+> Unlike Level 2's clean, well-structured Bookmark API, this app has **8 bugs and 8 TODOs** deliberately embedded. You won't fix them here — you'll discover and plan fixes. Level 4 is where you execute those plans.
 
 ```
 sample-app/

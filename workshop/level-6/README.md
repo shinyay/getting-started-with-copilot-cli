@@ -42,6 +42,8 @@ make test   # Should see all tests pass (existing tests don't cover the bugs)
 
 Level 6 uses a **URL Shortener CLI** — a realistic multi-module Python application with intentional issues that require different workflow approaches to resolve.
 
+> Unlike Level 5's math library (focused on running tests and linters), this app is designed for **complete workflow practice**: it has a multi-file bug (stats wrong after delete), test coverage gaps (validator.py untested), a feature gap (expiration), and duplicated logic — each requiring a different workflow to resolve.
+
 ```
 sample-app/
 ├── shortener/

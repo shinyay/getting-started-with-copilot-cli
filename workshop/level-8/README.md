@@ -34,6 +34,8 @@ By the end of this level, you will be able to:
 
 Level 8 uses a **DevOps Toolkit** — a multi-service project with automation scripts, CI pipelines, and security-sensitive configurations.
 
+> Unlike previous levels which focused on a single application, this level uses a **multi-service, multi-language project** (Node.js API + Python worker) with shell scripts, CI workflows, and sensitive config files. The focus is not on the code itself but on how you **use Copilot** — permissions, automation, sessions, and delegation.
+
 ```
 sample-app/
 ├── services/
