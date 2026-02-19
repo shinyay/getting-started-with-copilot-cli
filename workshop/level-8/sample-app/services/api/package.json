@@ -1,0 +1,11 @@
+{
+  "name": "api-service",
+  "version": "1.0.0",
+  "description": "API service for the DevOps Toolkit",
+  "main": "index.js",
+  "scripts": {
+    "start": "node index.js",
+    "test": "echo 'API tests passed (placeholder)' && exit 0",
+    "lint": "echo 'API lint passed (placeholder)' && exit 0"
+  }
+}

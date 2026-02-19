@@ -1,0 +1,81 @@
+// =============================================================================
+// Copilot CLI Workshop — Dev Container Configuration
+// =============================================================================
+// Provides a ready-to-use environment for all 8 workshop levels:
+//   Levels 1–6: Python 3.12 with venv (pytest, flake8)
+//   Level 7:    Node.js 20 with TypeScript
+//   Level 8:    Both + shell scripting tools
+//
+// On first open: venv is created, dev tools installed, welcome shown.
+// Every new terminal: venv auto-activates (no manual `source` needed).
+// =============================================================================
+{
+  "name": "Copilot CLI Workshop",
+
+  // --- Container: Dockerfile via Compose ---
+  "dockerComposeFile": "compose.yaml",
+  "service": "workshop",
+  "workspaceFolder": "/workspace",
+
+  // --- Initialization ---
+  "postCreateCommand": "bash .devcontainer/post-create.sh",
+
+  // --- Default user (matches devcontainer base image) ---
+  "remoteUser": "vscode",
+
+  // --- VS Code Customizations ---
+  "customizations": {
+    "vscode": {
+      "settings": {
+        // Python: use the workshop venv
+        "python.defaultInterpreterPath": "/workspace/.venv/bin/python",
+        "python.terminal.activateEnvironment": true,
+
+        // Terminal: auto-activate venv in every new shell
+        "terminal.integrated.env.linux": {
+          "VIRTUAL_ENV": "/workspace/.venv",
+          "PATH": "/workspace/.venv/bin:${env:PATH}"
+        },
+
+        // Editor
+        "editor.formatOnSave": true,
+        "editor.rulers": [100],
+        "files.trimTrailingWhitespace": true,
+        "files.insertFinalNewline": true,
+
+        // Python formatting & linting
+        "python.analysis.typeCheckingMode": "basic",
+        "[python]": {
+          "editor.defaultFormatter": "ms-python.python",
+          "editor.rulers": [79, 100]
+        },
+
+        // Markdown
+        "[markdown]": {
+          "editor.wordWrap": "on",
+          "editor.rulers": []
+        }
+      },
+      "extensions": [
+        // Core
+        "github.copilot",
+        "github.copilot-chat",
+
+        // Python
+        "ms-python.python",
+        "ms-python.vscode-pylance",
+
+        // TypeScript/Node (Level 7)
+        "dbaeumer.vscode-eslint",
+
+        // Markdown (workshop content)
+        "yzhang.markdown-all-in-one",
+        "DavidAnson.vscode-markdownlint",
+
+        // Utilities
+        "EditorConfig.EditorConfig",
+        "GitHub.vscode-github-actions"
+      ]
+    }
+  }
+}

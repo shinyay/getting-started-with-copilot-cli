@@ -1,0 +1,23 @@
+# =============================================================================
+# Copilot CLI Workshop — Git Ignore
+# =============================================================================
+
+# Python
+.venv/
+__pycache__/
+*.py[cod]
+*.egg-info/
+.pytest_cache/
+
+# Node.js (Level 7)
+node_modules/
+dist/
+
+# IDE
+.vscode/.settings.json.bak
+*.swp
+*.swo
+
+# OS
+.DS_Store
+Thumbs.db

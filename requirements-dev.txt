@@ -1,0 +1,14 @@
+# =============================================================================
+# Copilot CLI Workshop — Python Dev Dependencies
+# =============================================================================
+# Installed into the virtual environment (.venv) during Dev Container setup.
+# These tools are used across multiple workshop levels:
+#
+#   pytest  — Level 5 (test execution, TDD exercises)
+#   flake8  — Level 5 (linting exercises)
+#
+# Note: All sample apps (Levels 1–6) use Python stdlib only.
+# These are development/testing tools, not application dependencies.
+# =============================================================================
+pytest>=7.0
+flake8>=6.0
